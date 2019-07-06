@@ -1,0 +1,81 @@
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Psychic Game </title>
+</head>
+
+<body>
+   
+    <div class="title">
+        <h1 class="h1Title">Psychic Game</h1>
+    </div>    
+
+        <p>Press any letters to start playing!</p>
+        <p id="win">Wins: 0</p>
+        <p id="loss">Losses: 0</p>
+        <p id="guessesleft">Guesses Left: 10</p>
+        <p id="myGuesses">Your guesses so far: </p>
+
+  
+    
+
+    <script type="text/javascript">
+  
+    var aiChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  
+    var wins = 0;
+    var losses = 0;
+   
+    var guesses = 10;
+    var guessesLeft = 10;
+    
+    var guessedArr = [];
+  
+    var randomLetter = aiChoices[Math.floor(Math.random() * aiChoices.length)];
+   
+    document.addEventListener('keyup', function(event) {
+        
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+   
+     var gameEvent = {
+    
+     updateGuessesLeft: function() {
+        document.querySelector("#guessesleft").innerHTML = "Guesses Left: " + guessesLeft;
+                        },
+    updateguessedArr: function() {
+        document.querySelector("#myGuesses").innerHTML = "Your guesses so far: " + guessedArr.join(', ');
+                        },
+    updateaiChoices: function() {
+        randomLetter = aiChoices[Math.floor(Math.random() * aiChoices.length)];
+                        },
+   
+    reset: function() {
+        guessesLeft = 10;
+        guessedArr = [];
+        gameEvent.updateGuessesLeft();
+        gameEvent.updateguessedArr();
+        gameEvent.updateaiChoices();
+        },
+    }
+    
+    guessesLeft--;
+    guessedArr.push(userGuess);
+   
+    gameEvent.updateGuessesLeft();
+    gameEvent.updateguessedArr();
+    if ((guessesLeft > 0) && (userGuess == randomLetter)) {
+         wins++;
+    document.querySelector("#win").innerHTML =  "Wins: " + wins;
+         gameEvent.reset();
+    } else if (guessesLeft == 0) {
+        losses++;
+    document.querySelector("#loss").innerHTML = "Losses: " + losses;
+        gameEvent.reset();
+        }
+    });
+</script>
+</body>
+
+</html>

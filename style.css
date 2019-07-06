@@ -1,0 +1,45 @@
+html,body {
+    height: 100%;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
+    
+
+}
+
+.h1Title {
+    padding-top: 20px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: underline;
+    font-size: 150px;
+
+}
+
+#game {
+    background-color:#DEB887;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.column {
+    max-width: 100%;
+    flex-grow:1;
+  
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+    
+}
+
+.container {
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+}
+
+

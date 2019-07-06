@@ -1,0 +1,24 @@
+html,body {
+    height: 100%;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
+  
+}
+
+.h1Title {
+    padding-top: 20px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: underline;
+    font-size: 150px;
+  
+}
+
+.title {
+    background-color: lightcoral;
+}
+
+
+
+
+
